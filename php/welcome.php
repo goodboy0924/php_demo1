@@ -28,15 +28,9 @@
                 }
             }
         });
-       // alert($.cookie('token'));
-//       $('#token').val($.cookie('token'));
-//       $('#sessionID').val($.cookie('sessionID'));
-//       $('#username').val($.cookie('username'));
-//       $('#myform').action = "/phplogic/services.php";
-//       $('#myform').submit();
     }
     function logoutAction() {
-       $('#myform').action = "/phplogic/logout.php";
+       $('#myform').attr('action', '/phplogic/logout.php');
        $('#myform').submit();
     }
 </script>
@@ -50,7 +44,7 @@
         setcookie('sessionID', session_id());
         setcookie('username', $name);        
     ?>
-    <form action="/phplogic/services.php" method="post" id='myform'>
+    <form method="post" id='myform'>
         <br />
         郵便番号:<input type="text" maxlength="3" id="pno1" style="width: 30px"/>-<input type="text" maxlength="4" id="pno2" style="width: 40px" />
         <input type='hidden' id="token" name='token' />
